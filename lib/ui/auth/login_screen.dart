@@ -4,6 +4,7 @@ import 'package:flutter/physics.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/foundation/key.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:learn_firebase/ui/auth/Login_with%20_Phone_number.dart';
 import 'package:learn_firebase/ui/auth/signup_screen.dart';
 import 'package:learn_firebase/utiles/utiles.dart';
@@ -17,7 +18,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool loading =false;
+  bool loading = false;
   final _formkey = GlobalKey<FormState>();
   final emailControllar = TextEditingController();
   final passwordControllar = TextEditingController();
@@ -32,26 +33,26 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void Login() async {
     setState(() {
-      loading=true;
+      loading = true;
     });
     _auth
         .signInWithEmailAndPassword(
-          email: emailControllar.text,
-          password: passwordControllar.text,
-        )
+      email: emailControllar.text,
+      password: passwordControllar.text,
+    )
         .then((value) {
-          utils().toastmassage(value.user!.email.toString());
-          Navigator.push(context,MaterialPageRoute(builder: (context)=>PostScreen()));
-          setState(() {
-      loading=false;
-    });
-        })
-        .onError((error, stackTrace) {
-          debugPrint(error.toString());
+      utils().toastmassage(value.user!.email.toString());
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => PostScreen()));
+      setState(() {
+        loading = false;
+      });
+    }).onError((error, stackTrace) {
+      debugPrint(error.toString());
       utils().toastmassage(error.toString());
       setState(() {
-      loading=true;
-    });
+        loading = true;
+      });
     });
   }
 
@@ -140,25 +141,28 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Text("Signup"))
               ],
-            ),InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => LoginWithPhomwNumber()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(color: Colors.deepPurple),
-                ),
-                child: Center(child: Text("Login With Phone Number")),
-              ),
+
+              //   ),InkWell(
+              //   onTap: () {
+              //     Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) => LoginWithPhomwNumber()));
+              //   },
+              //   child: Padding(
+              //     padding: const EdgeInsets.symmetric(horizontal: 15),
+              //     child: Container(
+              //       height: 50,
+              //       decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(50),
+              //         border: Border.all(color: Colors.deepPurple),
+              //       ),
+              //       child: Center(child: Text("Login With Phone Number")),
+              //     ),
+              //   ),
+              //
             ),
-          ),
+            
           ],
         ),
       ),
