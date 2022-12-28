@@ -80,7 +80,7 @@ class _signupScreenState extends State<signupScreen> {
                 ),
               )),
           SizedBox(
-            height: 40,
+            height: 25,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -90,32 +90,30 @@ class _signupScreenState extends State<signupScreen> {
               onTap: () {
                 try {
                   if (_formkey.currentState!.validate()) {
-                  setState(() {
-                    loading = true;
-                  });
-                  _auth
-                      .createUserWithEmailAndPassword(
-                          email: emailControllar.text.toString(),
-                          password: passwordControllar.text.toString())
-                      .then((value) {
                     setState(() {
-                      loading = false;
+                      loading = true;
                     });
-                  });
-                }
-                }on FirebaseAuthException catch (e) {
+                    _auth
+                        .createUserWithEmailAndPassword(
+                            email: emailControllar.text.toString(),
+                            password: passwordControllar.text.toString())
+                        .then((value) {
+                      setState(() {
+                        loading = false;
+                      });
+                    });
+                  }
+                } on FirebaseAuthException catch (e) {
                   print(e.message);
                   setState(() {
-                    loading=false;
+                    loading = false;
                   });
                 }
-                
-                
               },
             ),
           ),
           SizedBox(
-            height: 23,
+            height: 20,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -129,7 +127,8 @@ class _signupScreenState extends State<signupScreen> {
                   },
                   child: Text("Login"))
             ],
-          )
+          ),
+          
         ],
       ),
     );
