@@ -85,7 +85,7 @@ class _signupScreenState extends State<signupScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: RoundButton(
-              title: 'Signup'  ,
+              title: 'Signup',
               loading: loading,
               onTap: () {
                 try {
