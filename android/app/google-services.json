@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "590528655515",
+    "project_id": "learn-firebase-46df2",
+    "storage_bucket": "learn-firebase-46df2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590528655515:android:1e4fbba7294e4564d1963e",
+        "android_client_info": {
+          "package_name": "com.ezio.learn_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590528655515-809nfrn4n4nrrg1atkccf5g7ndurmolp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmE-vKlPKOn-6yw5Pgmetj7oCpFTBFWG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590528655515-809nfrn4n4nrrg1atkccf5g7ndurmolp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
