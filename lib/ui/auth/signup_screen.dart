@@ -5,6 +5,9 @@ import 'package:flutter/physics.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 import 'package:learn_firebase/ui/auth/login_screen.dart';
 import 'package:learn_firebase/utiles/utiles.dart';
 import 'package:learn_firebase/widgets/round_button.dart';
@@ -128,15 +131,20 @@ class _signupScreenState extends State<signupScreen> {
                   },
                   child: Text("Login"))
             ],
-          ),ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.purple,
-                  onPrimary: Colors.white,
-                ),
-                onPressed: () {},
-                icon: FaIcon(FontAwesomeIcons.google,color: Colors.white,),
-                label: Text("Login With Google")),
-          
+          ),
+          ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple,
+                onPrimary: Colors.white,
+              ),
+              onPressed: () {
+                GoogleSignIn().signIn();
+              },
+              icon: FaIcon(
+                FontAwesomeIcons.google,
+                color: Colors.white,
+              ),
+              label: Text("Login With Google")),
         ],
       ),
     );

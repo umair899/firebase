@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:learn_firebase/ui/auth/login_screen.dart';
+import 'package:learn_firebase/ui/posts/add_post.dart';
 import 'package:learn_firebase/utiles/utiles.dart';
 
 class PostScreen extends StatefulWidget {
@@ -18,7 +20,7 @@ class _PastScreebState extends State<PostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false,
         title: Center(child: const Text('Home')),
         actions: [
           IconButton(
@@ -32,6 +34,13 @@ class _PastScreebState extends State<PostScreen> {
               },
               icon: const Icon(Icons.logout))
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddpostScreen()));
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
