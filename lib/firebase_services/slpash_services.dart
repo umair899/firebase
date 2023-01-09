@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_firebase/ui/FireStore/firestore_list_screen.dart';
 import 'package:learn_firebase/ui/auth/login_screen.dart';
 import 'package:learn_firebase/ui/posts/past_screen.dart';
+import 'package:learn_firebase/ui/upload_image.dart';
 
 class splashServices {
   void islogin(BuildContext context) {
